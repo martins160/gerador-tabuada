@@ -1,0 +1,36 @@
+ td{
+   border: 1px solid black;
+   width: 50%;
+}
+
+ tr{
+   width: 40%;
+}
+
+ th{
+   width: 50%;
+}
+
+.table td, .table th{
+	border: 1px solid #dee2e6;
+}
+
+.table th{
+	border-top: none !important;
+	border-bottom: 1px solid #333;
+}
+
+.linha-top{
+	margin: 30px 0 15px 0;
+}
+
+.btn{
+	margin: 15px 0 50px 0;
+	font-size: 2em;
+}
+
+.table thead th{
+	border-bottom: none !important;
+	border-left: none !important;
+	border-right: none !important;
+}

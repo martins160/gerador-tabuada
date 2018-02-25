@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Caculadora</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+
+
+<div class="row linha-top">
+	<div class="col-md-12">
+		<h2 class="text-center">GERADOR DE TABUADA</h2>
+	</div>	
+</div>
+
+<form id="form" action="" method="get"> 
+    <input type="text" class="form-control" id="numero" placeholder="Informe um número para calcular">		    
+	<button class="btn btn-primary btn-lg btn-block" type="button" onclick="return calcular();">CALCULAR</button>  
+</form>
+
+<table class="table table-hover" id="tabela">
+  <thead>
+    <tr>
+      <th scope="col">NÚMERO</th>
+      <th scope="col">MULTIPLICADOR</th>
+      <th scope="col">RESULTADO</th>
+    </tr>
+  </thead>
+
+  <tbody>    
+  </tbody>
+
+</table> 
+
+</div>
+
+
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+    
+<script>
+	function calcular() {
+	var form = document.getElementById('form');
+	var n = form.numero.value;
+	var table = document.getElementById("tabela");
+
+	if (n.match(/^[0-9]+$/)) {
+	  var num = parseInt(n);
+	  var resultado = 0;
+	  tabuada = "";
+	  for (operando = 10; operando > 0; operando--) {
+	    resultado = num * operando;
+	    var row = table.insertRow(1);//Seleciona a 1ª linha da tabela
+	    var cell1 = row.insertCell(0);//Insere td numero
+	    var cell2 = row.insertCell(1);//Insere td Multiplicador
+	    var cell3 = row.insertCell(2);//Insere td Resultado
+	    cell1.innerHTML = num;;//Valor do numero
+	    cell2.innerHTML = operando;;//Valor do Multiplicador
+	    cell3.innerHTML = resultado;;//Valor do Resultado
+	  }
+	  table.style.display = "block";//Torna a tabella visível
+	} else {
+	  alert("Favor informar um número inteiro!");
+	}
+	} 
+</script>
+	
+</body>
+</html>
